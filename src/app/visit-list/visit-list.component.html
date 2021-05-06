@@ -1,0 +1,28 @@
+
+<h2> Visit List</h2>
+<table class = "table table-striped">
+  <thead>
+  <tr>
+    <th>User Id</th>
+    <th> Id Visit </th>
+    <th> Place</th>
+    <th> Date </th>
+    <th> Actions </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let visit of visits" >
+    <td> {{ visit.userId }} </td>
+    <td> {{ visit.id }} </td>
+    <td> {{ visit.place }} </td>
+    <td> {{ visit.date }} </td>
+    <td>
+
+      <button (click) = "updateVisit(visit.id)" class = "btn btn-info"> Update</button>
+      <button (click) = "deleteVisit(visit.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+    </td>
+
+
+  </tr>
+  </tbody>
+</table>

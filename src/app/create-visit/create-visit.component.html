@@ -1,0 +1,40 @@
+<p>create-visit works!</p>
+<h3> Create Visit </h3>
+<form (ngSubmit) = "onSubmit()">
+  <div class="form-group">
+    <label> user Id</label>
+    <input type="text" class ="form-control" id = "userId"
+           [(ngModel)] = "visit.userId" name = "userId">
+  </div>
+
+  <div class="form-group">
+    <label> Id Visit</label>
+    <input type="text" class ="form-control" id = "id" required #l="ngModel"
+           [(ngModel)] = "visit.id" name = "id">
+  </div>
+  <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+    the name Visit is a required field
+  </div>
+
+  <div class="form-group">
+    <label> visit Place</label>
+    <input type="text" class ="form-control" id = "place" required #p="ngModel"
+           [(ngModel)] = "visit.place" name = "place">
+  </div>
+  <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
+    the place Visit is a required field
+  </div>
+
+  <div class="form-group">
+    <label> visit Date</label>
+    <input type="text" class ="form-control" id = "date" required #d="ngModel" pattern="aaaa-mm-jj"
+           [(ngModel)] = "visit.date" name = "date">
+  </div>
+  <div class="alert alert-danger" *ngIf="d.invalid && d.touched">
+   <div *ngIf="d.errors.required">the date Visit is a required field</div>
+    <div *ngIf="d.errors.pattern">the date Visit is not right</div>
+  </div>
+
+  <button class = "btn btn-success" type ="submit">visiter</button>
+
+</form>

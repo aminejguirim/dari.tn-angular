@@ -16,25 +16,52 @@
     the name Visit is a required field
   </div>
 
-  <div class="form-group">
+  <!--<div class="form-group">
     <label> visit Place</label>
     <input type="text" class ="form-control" id = "place" required #p="ngModel"
            [(ngModel)] = "visit.place" name = "place">
   </div>
   <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
     the place Visit is a required field
-  </div>
+  </div>-->
+  <label for="place">Choose a country</label>
 
-  <div class="form-group">
+  <select name="place" id="place"
+          [(ngModel)] = "visit.place" name = "place">
+    <option value="">--Please choose an option--</option>
+    <option value="nabeul">Nabeul</option>
+    <option value="tunis">Tunis</option>
+    <option value="djerba">Djerba</option>
+    <option value="bizerte">Bizerte</option>
+    <option value="gassrin">Gassrin</option>
+    <option value="gafsa">Gafsa</option>
+  </select>
+
+
+
+  <!--<div class="form-group">
     <label> visit Date</label>
     <input type="text" class ="form-control" id = "date" required #d="ngModel" pattern="aaaa-mm-jj"
-           [(ngModel)] = "visit.date" name = "date">
-  </div>
+           [(ngModel)] = "visit.date" name = "date"></div>
+
+
+
   <div class="alert alert-danger" *ngIf="d.invalid && d.touched">
    <div *ngIf="d.errors.required">the date Visit is a required field</div>
     <div *ngIf="d.errors.pattern">the date Visit is not right</div>
-  </div>
 
+  </div>-->
+
+
+  <div class="form-group">
+    <label> Temps</label>
+    <input type="text" class ="form-control" id = "temps" required #t="ngModel" pattern="hh:mm"
+           [(ngModel)] = "visit.temps" name = "temps">
+  </div>
+  <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+    <div *ngIf="t.errors.required">the date Visit is a required field</div>
+    <div *ngIf="t.errors.pattern">the time Visit is not right</div>
+  </div>
   <button class = "btn btn-success" type ="submit">visiter</button>
 
 </form>

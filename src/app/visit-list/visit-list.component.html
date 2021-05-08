@@ -7,6 +7,7 @@
     <th> Id Visit </th>
     <th> Place</th>
     <th> Date </th>
+    <th> Temps </th>
     <th> Actions </th>
   </tr>
   </thead>
@@ -16,6 +17,8 @@
     <td> {{ visit.id }} </td>
     <td> {{ visit.place }} </td>
     <td> {{ visit.date }} </td>
+    <td> {{ visit.temps }} </td>
+
     <td>
 
       <button (click) = "updateVisit(visit.id)" class = "btn btn-info"> Update</button>

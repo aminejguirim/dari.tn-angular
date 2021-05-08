@@ -3,6 +3,7 @@ import {Visit} from "../model/visit";
 import {VisitService} from "../services/visit.service";
 import {Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-create-visit',
   templateUrl: './create-visit.component.html',
@@ -10,6 +11,7 @@ import {Router} from "@angular/router";
 })
 export class CreateVisitComponent implements OnInit {
   visit: Visit = new Visit();
+
   constructor(private visitService: VisitService, private router: Router) { }
 
   ngOnInit(): void {

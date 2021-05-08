@@ -1,7 +1,11 @@
 <h2> Property List</h2>
+<div class="row">
+  <div class="col-md-8">
 <div class="search-hero">
   <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a property">
 </div>
+    <label for="cat">Category </label>
+    <input type="text" id="cat" [formControl]="category" />
 <table class = "table table-striped">
   <thead>
   <tr>
@@ -12,7 +16,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor = "let p of properties | filter:searchText" >
+  <tr *ngFor = "let p of properties | filter:searchText | search: [category.value]: ['category'] ;" >
     <td> {{ p.category }} </td>
     <td> {{ p.city }} </td>
     <td> {{ p.price }} </td>
@@ -21,5 +25,12 @@
     </td>
   </tr>
   </tbody>
+
 </table>
+  </div>
+  <div class="col-md-4">
+
+
+  </div>
+</div>
 

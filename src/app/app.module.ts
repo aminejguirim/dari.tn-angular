@@ -14,6 +14,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PropertyDetailsComponent } from './property-details/property-details.component';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SearchPipe} from './search.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,16 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MyPropertiesComponent,
     NavbarComponent,
     SidebarComponent,
-    PropertyDetailsComponent
+    PropertyDetailsComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

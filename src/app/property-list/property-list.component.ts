@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PropertyService} from '../shared/property.service';
 import {Router} from '@angular/router';
 import {Property} from '../model/property';
+import { FormControl } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ export class PropertyListComponent implements OnInit {
 
   searchText;
   properties: Property[];
+  category = new FormControl('');
 
   constructor(private propertyService: PropertyService,
               private router: Router) {

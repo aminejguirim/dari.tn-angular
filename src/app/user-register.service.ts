@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class UserRegisterService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public doRegistration(user){
     return this.http.post("http://localhost:9005/save-user",user, {responseType : "text" as "json"});

@@ -15,6 +15,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { AllUsersComponent } from './all-users/all-users.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AllUsersComponent } from './all-users/all-users.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    AllUsersComponent
+    AllUsersComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

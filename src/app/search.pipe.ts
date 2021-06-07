@@ -6,8 +6,8 @@ export class SearchPipe implements PipeTransform {
   transform(list: any[], value: any[], key: any[]): any {
     value.forEach((name: string, index) => {
       if (name) {
-        list = list.filter((item) => {
-          return (item[key[index]]
+        list = list.filter((p) => {
+          return (p[key[index]]
             .toString()
             .toLowerCase()
             .indexOf(name.toString().toLowerCase()) !== -1);

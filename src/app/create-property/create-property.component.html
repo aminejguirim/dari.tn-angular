@@ -53,20 +53,22 @@
       </div>
     </div>
 
-    <select class="custom-select">
-      <option selected>Open this select menu</option>
-      <option value="1">Rent</option>
-      <option value="2">Sale</option>
-    </select>
+    <div class="form-group">
+      <label> Type</label>
+      <input type="text" class ="form-control" id = "type"
+             [(ngModel)] = "property.type" name = "type">
+    </div>
 
     <br><br>
 
     <div class="form-group">
       <label> Description</label>
-      <textarea id="w3review" name="w3review" rows="4" cols="50" type="text" class ="form-control" id = "description"
+      <textarea  rows="4" cols="50" type="text" class ="form-control" id = "description"
              [(ngModel)] = property.description name = "description">
       </textarea>
     </div>
+
+
 
     <button class = "btn btn-success" type ="submit">Submit</button>
 

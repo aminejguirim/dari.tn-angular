@@ -23,6 +23,7 @@ export class CreatePropertyComponent implements OnInit {
 
   }
   saveProperty(){
+
     this.propertyService.createProperty(this.property).subscribe(data => {
      console.log(data);
      this.goToProperty();

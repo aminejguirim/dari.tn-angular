@@ -5,6 +5,9 @@ import {CreatePropertyComponent} from './create-property/create-property.compone
 import {UpdatePropertyComponent} from './update-property/update-property.component';
 import {MyPropertiesComponent} from './my-properties/my-properties.component';
 import {PropertyDetailsComponent} from './property-details/property-details.component';
+import {StatisticComponent} from './statistic/statistic.component';
+import {HomeComponent} from './home/home.component';
+
 
 const routes: Routes = [
   {path: 'properties', component: PropertyListComponent},
@@ -12,7 +15,9 @@ const routes: Routes = [
   {path: '', redirectTo: 'properties', pathMatch: 'full'},
   {path: 'update-property/:id', component: UpdatePropertyComponent},
   {path: 'my-properties', component: MyPropertiesComponent},
-  {path: 'property-details/:id', component: PropertyDetailsComponent}
+  {path: 'property-details/:id', component: PropertyDetailsComponent},
+  {path: 'stat', component: StatisticComponent},
+  {path: 'home', component: HomeComponent}
 ];
 
 @NgModule({

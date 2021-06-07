@@ -10,6 +10,8 @@ import {PropertyService} from '../shared/property.service';
 })
 export class PropertyDetailsComponent implements OnInit {
 
+
+
   id: number;
   property: Property;
 
@@ -24,6 +26,7 @@ export class PropertyDetailsComponent implements OnInit {
       this.property = data;
     });
   }
+
 
 
 }

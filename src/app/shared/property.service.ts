@@ -14,6 +14,10 @@ export class PropertyService {
   private updateURL = 'http://localhost:8088/Dari/servlet/updateProperty';
   private deleteURL = 'http://localhost:8088/Dari/servlet/Property/delete';
   private getByUserIdURL = 'http://localhost:8088/Dari/servlet/getPropertyByUser/1';
+  private getPriceURL = 'http://localhost:8088/Dari/servlet/PriceDesc';
+  private getStatState = 'http://localhost:8088/Dari/servlet/get-annonce-stat-region/tunis';
+  private getRent = 'http://localhost:8088/Dari/servlet/rent';
+  private getSale = 'http://localhost:8088/Dari/servlet/sale';
   private idUser  = 3;
 
   constructor(private httpClient: HttpClient) { }
@@ -40,4 +44,21 @@ export class PropertyService {
   getPropertiesByUserId(): Observable<Property[]>{
     return this.httpClient.get<Property[]>(`${this.getByUserIdURL}`);
   }
+
+  getPriceRange(pricemin, pricemax): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.getPriceURL}/${pricemin}/${pricemax}`);
+  }
+
+  getStatStates(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.getStatState}`);
+  }
+
+  getPRent(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.getRent}`);
+  }
+
+  getPSale(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.getSale}`);
+  }
 }
+

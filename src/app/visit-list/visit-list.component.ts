@@ -3,6 +3,7 @@ import {Visit} from "../model/visit";
 import {VisitService} from "../services/visit.service";
 import {Router} from "@angular/router";
 import {visit} from "@angular/compiler-cli/src/ngtsc/util/src/visitor";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-visit-list',
@@ -11,6 +12,7 @@ import {visit} from "@angular/compiler-cli/src/ngtsc/util/src/visitor";
 })
 export class VisitListComponent implements OnInit {
   visits: Visit[];
+  place = new FormControl('');
 
   constructor(private visitService: VisitService, private router: Router) {
   }
@@ -24,7 +26,8 @@ export class VisitListComponent implements OnInit {
       this.visits = data;
     });
   }
-
+  visitDetails(id:number){
+    this.router.navigate(['visit-details', id]);}
   updateVisit(id: number) {
     this.router.navigate(['update-visit', id]);
   }

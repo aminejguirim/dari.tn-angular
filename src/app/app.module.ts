@@ -10,10 +10,12 @@ import { VisitListComponent } from './visit-list/visit-list.component';
 import { VisitComponent } from './visit/visit.component';
 import {HttpClientModule} from "@angular/common/http";
 import { CreateVisitComponent } from './create-visit/create-visit.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateVisitComponent } from './update-visit/update-visit.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { VisitDetailsComponent } from './visit-details/visit-details.component';
+import {SearchPipe} from "./search.pipe";
 
 
 @NgModule({
@@ -26,14 +28,16 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     CreateVisitComponent,
     UpdateVisitComponent,
     NavBarComponent,
-    SideBarComponent
+    SideBarComponent,
+    VisitDetailsComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

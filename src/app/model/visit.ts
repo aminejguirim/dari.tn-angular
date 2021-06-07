@@ -4,4 +4,5 @@ export class Visit{
   place:string;
   date:string;
   temps:string;
+  property:number;
 }

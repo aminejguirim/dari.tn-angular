@@ -1,20 +1,9 @@
-<p>create-visit works!</p>
+<p>create-visit </p>
 <h3> Create Visit </h3>
 <form (ngSubmit) = "onSubmit()">
-  <div class="form-group">
-    <label> user Id</label>
-    <input type="text" class ="form-control" id = "userId"
-           [(ngModel)] = "visit.userId" name = "userId">
-  </div>
 
-  <div class="form-group">
-    <label> Id Visit</label>
-    <input type="text" class ="form-control" id = "id" required #l="ngModel"
-           [(ngModel)] = "visit.id" name = "id">
-  </div>
-  <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
-    the name Visit is a required field
-  </div>
+
+
 
   <!--<div class="form-group">
     <label> visit Place</label>
@@ -39,28 +28,28 @@
 
 
 
-  <!--<div class="form-group">
+ <div class="form-group">
     <label> visit Date</label>
-    <input type="text" class ="form-control" id = "date" required #d="ngModel" pattern="aaaa-mm-jj"
+    <input type="text" class ="form-control" id = "date" required #d="ngModel"
            [(ngModel)] = "visit.date" name = "date"></div>
 
 
 
-  <div class="alert alert-danger" *ngIf="d.invalid && d.touched">
-   <div *ngIf="d.errors.required">the date Visit is a required field</div>
-    <div *ngIf="d.errors.pattern">the date Visit is not right</div>
 
-  </div>-->
+
+
+
+
 
 
   <div class="form-group">
     <label> Temps</label>
-    <input type="text" class ="form-control" id = "temps" required #t="ngModel" pattern="hh:mm"
+    <input type="text" class ="form-control" id = "temps" required #t="ngModel"
            [(ngModel)] = "visit.temps" name = "temps">
   </div>
   <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
-    <div *ngIf="t.errors.required">the date Visit is a required field</div>
-    <div *ngIf="t.errors.pattern">the time Visit is not right</div>
+    <div *ngIf="t.errors.required">the time Visit is a required field</div>
+
   </div>
   <button class = "btn btn-success" type ="submit">visiter</button>
 

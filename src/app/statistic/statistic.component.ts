@@ -12,16 +12,47 @@ export class StatisticComponent implements OnInit {
 
   properties: Property[];
   property: Property;
-  stat: Property[];
+  stat1: Property[];
+  stat2: Property[];
+  stat3: Property[];
+  avg1: Property[];
+  avg2: Property[];
+  avg3: Property[];
+
 
   constructor(private propertyService: PropertyService,
               private router: Router) { }
 
   ngOnInit(): void {
-    this.propertyService.getStatStates().subscribe(res => {console.log(res);
+    this.propertyService.getStatStatestunis().subscribe(res => {console.log(res);
 
-                                                           this.stat = res;
+                                                                this.stat1 = res;
   });
+
+    this.propertyService.getStatStatesnabeul().subscribe(res => {console.log(res);
+
+                                                                 this.stat2 = res;
+    });
+
+    this.propertyService.getStatStatesariana().subscribe(res => {console.log(res);
+
+                                                                 this.stat3 = res;
+    });
+
+    this.propertyService.getAveragePriceTunis().subscribe(res => {console.log(res);
+
+                                                                  this.avg1 = res;
+    });
+
+    this.propertyService.getAveragePriceNabeul().subscribe(res => {console.log(res);
+
+                                                                   this.avg2 = res;
+    });
+
+    this.propertyService.getAveragePriceAriana().subscribe(res => {console.log(res);
+
+                                                                   this.avg3 = res;
+    });
 
 
 

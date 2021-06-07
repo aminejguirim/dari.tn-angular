@@ -15,9 +15,14 @@ export class PropertyService {
   private deleteURL = 'http://localhost:8088/Dari/servlet/Property/delete';
   private getByUserIdURL = 'http://localhost:8088/Dari/servlet/getPropertyByUser/1';
   private getPriceURL = 'http://localhost:8088/Dari/servlet/PriceDesc';
-  private getStatState = 'http://localhost:8088/Dari/servlet/get-annonce-stat-region/tunis';
+  private getStatStatetunis = 'http://localhost:8088/Dari/servlet/get-annonce-stat-region/tunis';
+  private getStatStatenabeul = 'http://localhost:8088/Dari/servlet/get-annonce-stat-region/nabeul';
+  private getStatStateariana = 'http://localhost:8088/Dari/servlet/get-annonce-stat-region/ariana';
   private getRent = 'http://localhost:8088/Dari/servlet/rent';
   private getSale = 'http://localhost:8088/Dari/servlet/sale';
+  private averagePriceTunis = 'http://localhost:8088/Dari/servlet/averageprice/tunis';
+  private averagePriceNabeul = 'http://localhost:8088/Dari/servlet/averageprice/nabeul';
+  private averagePriceAriana = 'http://localhost:8088/Dari/servlet/averageprice/ariana';
   private idUser  = 3;
 
   constructor(private httpClient: HttpClient) { }
@@ -49,8 +54,28 @@ export class PropertyService {
     return this.httpClient.get<Property[]>(`${this.getPriceURL}/${pricemin}/${pricemax}`);
   }
 
-  getStatStates(): Observable<Property[]>{
-    return this.httpClient.get<Property[]>(`${this.getStatState}`);
+  getStatStatestunis(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.getStatStatetunis}`);
+  }
+
+  getStatStatesnabeul(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.getStatStatenabeul}`);
+  }
+
+  getStatStatesariana(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.getStatStateariana}`);
+  }
+
+  getAveragePriceTunis(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.averagePriceTunis}`);
+  }
+
+  getAveragePriceNabeul(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.averagePriceNabeul}`);
+  }
+
+  getAveragePriceAriana(): Observable<Property[]>{
+    return this.httpClient.get<Property[]>(`${this.averagePriceAriana}`);
   }
 
   getPRent(): Observable<Property[]>{

@@ -1,19 +1,28 @@
 <div class="col-md-6 offset-md-3">
   <h3> Create Property </h3>
-  <form (ngSubmit) = "onSubmit()">
+  <form (ngSubmit) = "onSubmit()" #f="ngForm">
 
     <div class="form-group">
       <label> Category</label>
       <input type="text" class ="form-control" id = "category"
-             [(ngModel)] = "property.category" name = "category">
+             [(ngModel)] = "property.category" name = "category" ngModel #l="ngModel" required pattern="[A-Za-z]+">
+    </div>
+    <div class="alert-danger" *ngIf="l.invalid && l.touched">
+      <div *ngIf="l.errors.required">The Category is a required field</div>
+      <div *ngIf="l.errors.pattern">The Category dosen't seem right</div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-5">
         <label> City</label>
         <input type="text" class ="form-control" id = "city"
-               [(ngModel)] = "property.city" name = "city">
+               [(ngModel)] = "property.city" name = "city" ngModel #e="ngModel" required pattern="[A-Za-z ]+">
       </div>
+      <div class="alert-danger" *ngIf="e.invalid && e.touched">
+        <div *ngIf="e.errors.required">The City is a required field</div>
+        <div *ngIf="e.errors.pattern">The City dosen't seem right</div>
+      </div>
+
       <div class="form-group col-md-4">
         <label> State</label>
         <input type="text" class ="form-control" id = "state"
@@ -30,13 +39,18 @@
       <div class="form-group col-md-5">
         <label> Price</label>
         <input type="text" class ="form-control" id = "prices"
-               [(ngModel)] = property.price name = "price">
+               [(ngModel)] = property.price name = "price" ngModel #p="ngModel" required pattern="[0-9]+">
+      </div>
+      <div class="alert-danger" *ngIf="p.invalid && p.touched">
+        <div *ngIf="p.errors.required">The Price is a required field</div>
+        <div *ngIf="p.errors.pattern">The Price dosen't seem right</div>
       </div>
       <div class="form-group col-md-5">
         <label> Surface</label>
         <input type="text" class ="form-control" id = "surfaces"
-               [(ngModel)] = property.surface  name = "surface">
+               [(ngModel)] = property.surface  name = "surface" >
       </div>
+
     </div>
 
 
@@ -70,7 +84,7 @@
 
 
 
-    <button class = "btn btn-success" type ="submit">Submit</button>
+    <button class = "btn btn-success" type ="submit"  [disabled]="f.invalid">Submit</button>
 
   </form>
 </div>
